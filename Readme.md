@@ -12,6 +12,7 @@
 * Plugin 'taglist.vim'
 * Plugin 'AutoComplPop'
 * Plugin 'Syntastic'
+* Plugin 'lrvick/Conque-Shell'
 
 ## 安装
 
@@ -28,12 +29,20 @@ git 将此仓库拖到本地 .vim 文件夹，而后将.vim 文件夹中的 .vim
 | < space > + n | 下翻页 |
 | < space > + j/k/h/l | 移动到上下左右窗口 |
 | < space > + w | 切换到下一个窗口 |
-| < space > + w + h/j/k/l | 上下左右调整窗口大小 | 
+| < space > + u + h/j/k/l | 上下左右调整窗口大小 | 
+
+## 插件快捷调用
+
+| 快捷键 | 作用 |
+| ------ | ---- |
+| < space > + s | 保存文件 |
 | < space > + f | 打开关闭文件处理器 |
 | < space > + t | 打开关闭 tlist 窗口 |
 | < space > + e | 打开 debug 窗口 |
 | < space > + r | 编译并且运行 |
 | < space > + c | 注释和取消注释 |
+| < space > + x | 新建窗口 打开终端 |
+| < space > + X | 新建标签 打开终端 |
 
 ## 标签相关
 

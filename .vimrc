@@ -31,26 +31,32 @@ set laststatus=2
 set statusline=%F%m%r%h%w%=\ [ft=%Y]\ %{\"[fenc=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"]\"}\ [ff=%{&ff}]\ [pos=%04l,%04v][%p%%][len=%L]
 
 " ----------------------------- key map ---------------------------------
-nmap <space>s :w<CR>
-nmap <space>j <C-W>j
-nmap <space>k <C-W>k
-nmap <space>h <C-W>h
-nmap <space>l <C-W>l
-nmap <space>w <C-W>w
-nmap <space>z za
+noremap <space>s :w<CR>
+noremap <space>q :q<CR>
+noremap <space>o :vs 
 
-nmap <space>xk  :resize +3<CR>
-nmap <space>xj  :resize -3<CR>
-nmap <space>xh  :vertical resize -3<CR>
-nmap <space>xl  :vertical resize +3<CR>
+noremap <space>p <C-u>
+noremap	<space>n <C-d>
 
-nmap <space>q :q<CR>
+noremap <space>j <C-W>j
+noremap <space>k <C-W>k
+noremap <space>h <C-W>h
+noremap <space>l <C-W>l
+noremap <space>w <C-W>w
 
-nmap <space>gc :tabc<CR> 
-nmap <space>go :tabo<CR>
-nmap <space>gn :tabp<CR>
-nmap <space>gm :tabn<CR>
-nmap <space>ge :tabedit 
+noremap <space>z za
+
+noremap <space>uk  :resize +3<CR>
+noremap <space>uj  :resize -3<CR>
+noremap <space>uh  :vertical resize -3<CR>
+noremap <space>ul  :vertical resize +3<CR>
+
+
+noremap <space>gc :tabc<CR> 
+noremap <space>go :tabo<CR>
+noremap <space>gn :tabp<CR>
+noremap <space>gm :tabn<CR>
+noremap <space>ge :tabedit 
 
 function! TabPos_ActivateBuffer(num)
     let s:count = a:num
@@ -60,9 +66,9 @@ endfunction
        
 function! TabPos_Initialize() 
     for i in range(1, 9)
-        exe "map <space>g" . i . " :call TabPos_ActivateBuffer(". i . ")<CR>"
+        exe "map <space>" . i . " :call TabPos_ActivateBuffer(". i . ")<CR>"
     endfor
-    exe "map <space>g0 :call TabPos_ActivateBuffer(10)<CR>"
+    exe "map <space>0 :call TabPos_ActivateBuffer(10)<CR>"
 endfunction
  
 autocmd VimEnter * call TabPos_Initialize()
@@ -78,6 +84,7 @@ Plugin 'taglist.vim'
 Plugin 'AutoComplPop'
 Plugin 'Syntastic'
 Plugin 'The-NERD-Commenter'
+Plugin 'lrvick/Conque-Shell'
 
 call vundle#end()
 filetype plugin indent on
@@ -100,11 +107,16 @@ let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
-nmap <space>e :Errors<CR> 
+noremap <space>e :Errors<CR> 
+
+" ----------------------------- Conque Shell Config ------------------
+
+noremap <space>x :ConqueTermSplit zsh<CR>
+noremap <space>X :ConqueTermTab zsh<CR>
 
 " ----------------------------- Comment Config -----------------------
 
-nmap <space>c \c<space>
+noremap <space>c \c<space>
 
 " ----------------------------- Extra File Config ------------------------
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2  
