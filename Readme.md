@@ -16,7 +16,9 @@
 
 ## 安装
 
-git 将此仓库拖到本地 .vim 文件夹，而后将.vim 文件夹中的 .vimrc 文件软连接到 ~/.vimrc 即可。
+* git 将此仓库拖到本地 .vim 文件夹，而后将.vim 文件夹中的 .vimrc 文件软连接到 ~/.vimrc 。
+* 使用如下命令安装 vundle `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+* 在vim 中运行 :PluginInstall
 
 ## 快捷键使用 
 
