@@ -26,7 +26,6 @@ git 将此仓库拖到本地 .vim 文件夹，而后将.vim 文件夹中的 .vim
 | < space > + o | 分页打开新文件 |
 | < space > + p | 上翻页 |
 | < space > + n | 下翻页 |
-
 | < space > + j/k/h/l | 移动到上下左右窗口 |
 | < space > + w | 切换到下一个窗口 |
 | < space > + w + h/j/k/l | 上下左右调整窗口大小 | 
