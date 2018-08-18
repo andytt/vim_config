@@ -109,6 +109,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
 noremap <space>e :Errors<CR> 
 
+" ----------------------------- AutoComplPop Config ------------------
+
+noremap <space>a :AutoComplPopEnable<CR>
+noremap <space>A :AutoComplPopDisable<CR>
+
 " ----------------------------- Conque Shell Config ------------------
 
 noremap <space>x :ConqueTermSplit zsh<CR>
