@@ -1,4 +1,9 @@
+" 这里是 Ertuil VIM 配置文件 
+"
+
+
 " ---------------------------- Basic Config ------------------------------
+
 set nu
 set ruler
 syntax enable
@@ -52,11 +57,24 @@ noremap <space>uh  :vertical resize -3<CR>
 noremap <space>ul  :vertical resize +3<CR>
 
 
-noremap <space>gc :tabc<CR> 
-noremap <space>go :tabo<CR>
-noremap <space>gn :tabp<CR>
-noremap <space>gm :tabn<CR>
-noremap <space>ge :tabedit 
+noremap <C-A> ^
+noremap <C-E> $
+noremap <C-K> d$
+noremap <C-U> d^
+
+noremap <space>ga :!git add *<CR>
+noremap <space>gc :!git commit -m
+noremap <space>gg :!git add * && git commit -m
+noremap <space>gm :!git merge<CR>
+noremap <space>gp :!git push<CR>
+noremap <spave>gP :!git pull<CR>
+
+
+noremap <space>jc :tabc<CR> 
+noremap <space>jo :tabo<CR>
+noremap <space>jn :tabp<CR>
+noremap <space>jm :tabn<CR>
+noremap <space>je :tabedit 
 
 function! TabPos_ActivateBuffer(num)
     let s:count = a:num
