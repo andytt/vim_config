@@ -103,6 +103,8 @@ Plugin 'AutoComplPop'
 Plugin 'Syntastic'
 Plugin 'The-NERD-Commenter'
 Plugin 'lrvick/Conque-Shell'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
@@ -138,6 +140,9 @@ noremap <space>X :ConqueTermTab zsh<CR>
 " ----------------------------- Comment Config -----------------------
 
 noremap <space>c \c<space>
+
+" ----------------------------- State Bars -----------------------
+
 
 " ----------------------------- Extra File Config ------------------------
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.ts,*.js set noexpandtab tabstop=2 shiftwidth=2  
