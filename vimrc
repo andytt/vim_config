@@ -61,8 +61,6 @@ noremap <C-A> ^
 noremap <C-E> $
 noremap <C-K> d$
 noremap <C-U> d^
-noremap <C-V> <C-F>
-noremap <M-V> <C-B>
 
 noremap <space>ga :!git add *<CR>
 noremap <space>gc :!git commit -m
@@ -127,8 +125,6 @@ let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 0
-noremap <space>e :Errors<CR> 
-
 " ----------------------------- AutoComplPop Config ------------------
 
 noremap <space>a :AutoComplPopEnable<CR>
