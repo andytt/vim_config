@@ -161,8 +161,22 @@ noremap <space>A :AutoComplPopDisable<CR>
 
 " ----------------------------- Conque Shell Config ------------------
 
-noremap <space>x :ConqueTermSplit zsh<CR>
-noremap <space>X :ConqueTermTab zsh<CR>
+
+if has('terminal') && exists(':terminal') == 2 && has('patch-8.1.1')
+	" vim 8.1 支持 termwinkey ，不需要把 terminal 切换成 normal 模式
+	" 设置 termwinkey 为 CTRL 加减号（GVIM），有些终端下是 CTRL+?
+	" 后面四个键位是搭配 termwinkey 的，如果 termwinkey 更改，也要改
+	noremap <space>x :belowright term<CR><c-/>:resize -5<CR>
+	set termwinkey=<c-_>
+	tnoremap <space>h <c-_>h
+	tnoremap <space>l <c-_>l
+	tnoremap <space>j <c-_>j
+	tnoremap <space>k <c-_>k
+	tnoremap <space>q <c-\><c-n>
+else
+    noremap <space>x :ConqueTermSplit zsh<CR>
+    noremap <space>X :ConqueTermTab zsh<CR>
+endif
 
 " ----------------------------- Comment Config -----------------------
 
