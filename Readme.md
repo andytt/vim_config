@@ -16,7 +16,7 @@
 
 ## 安装
 
-* git 将此仓库拖到本地 .vim 文件夹，而后将.vim 文件夹中的 .vimrc 文件软连接到 ~/.vimrc 。
+* git 将此仓库拖到本地 .vim 文件
 * 使用如下命令安装 vundle `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 * 在vim 中运行 :PluginInstall
 
@@ -32,6 +32,27 @@
 | < space > + j/k/h/l | 移动到上下左右窗口 |
 | < space > + w | 切换到下一个窗口 |
 | < space > + u + h/j/k/l | 上下左右调整窗口大小 | 
+
+## 快速跳转相关
+
+| 快捷键 | 作用 |
+| ------ | ---- |
+| < C-A > | 跳转到行头 |
+| < C-E > | 跳转到行尾 |
+| < C-K > | 从当前字符删除到行尾 |
+| < C-U > | 从当前字符删除到行头 |
+
+## git 相关
+
+
+| 快捷键 | 作用 |
+| ------ | ---- |
+| <space>ga | git add * |
+| <space>gc | git commit -m |
+| <space>gg | git add * && git commit -m |
+| <space>gm | git merge |
+| <space>gp | git push |
+| <space>gP | git pull |
 
 ## 插件快捷调用
 
@@ -52,9 +73,9 @@
 
 | 快捷键 | 作用 |
 | ------ | ---- |
-| < space > + g + e | 新标签打开文件 |
-| < space > + g + c | 关闭标签 |
-| < space > + g + o | 关闭其他标签 |
-| < space > + g + n | 切换到上一个标签 |
-| < space > + g + m | 切换到下一个标签 |
+| < space > + j + e | 新标签打开文件 |
+| < space > + j + c | 关闭标签 |
+| < space > + j + o | 关闭其他标签 |
+| < space > + j + n | 切换到上一个标签 |
+| < space > + j + m | 切换到下一个标签 |
 | < space > + < num > | 切换第 num 个标签 |
