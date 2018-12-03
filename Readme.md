@@ -12,7 +12,11 @@
 * Plugin 'taglist.vim'
 * Plugin 'AutoComplPop'
 * Plugin 'Syntastic'
+* Plugin 'The-NERD-Commenter'
 * Plugin 'lrvick/Conque-Shell'
+* Plugin 'vim-airline/vim-airline'
+* Plugin 'vim-airline/vim-airline-themes'
+* Plugin 'kien/ctrlp.vim'
 
 ## 安装
 
@@ -24,14 +28,15 @@
 
 | 快捷键 | 作用 |
 | ------ | ---- |
-| < space > + s | 保存文件 |
+| < space > + w | 保存文件 |
 | < space > + q | 关闭缓存区 |
 | < space > + o | 分页打开新文件 |
 | < space > + p | 上翻页 |
 | < space > + n | 下翻页 |
 | < space > + j/k/h/l | 移动到上下左右窗口 |
-| < space > + w | 切换到下一个窗口 |
 | < space > + u + h/j/k/l | 上下左右调整窗口大小 | 
+| < space > + s | 全局搜索，文件、图片等 |
+| < space > + f | 文件管理 |
 
 ## 快速跳转相关
 
@@ -43,7 +48,6 @@
 | < C-U > | 从当前字符删除到行头 |
 
 ## git 相关
-
 
 | 快捷键 | 作用 |
 | ------ | ---- |
@@ -58,7 +62,6 @@
 
 | 快捷键 | 作用 |
 | ------ | ---- |
-| < space > + s | 保存文件 |
 | < space > + f | 打开关闭文件处理器 |
 | < space > + t | 打开关闭 tlist 窗口 |
 | < space > + e | 打开 debug 窗口 |
@@ -78,4 +81,4 @@
 | < space > + j + o | 关闭其他标签 |
 | < space > + j + n | 切换到上一个标签 |
 | < space > + j + m | 切换到下一个标签 |
-| < space > + < num > | 切换第 num 个标签 |
+

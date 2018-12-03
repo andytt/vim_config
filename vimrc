@@ -36,7 +36,7 @@ set laststatus=2
 set statusline=%F%m%r%h%w%=\ [ft=%Y]\ %{\"[fenc=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"]\"}\ [ff=%{&ff}]\ [pos=%04l,%04v][%p%%][len=%L]
 
 " ----------------------------- key map ---------------------------------
-noremap <space>s :w<CR>
+noremap <space>w :w<CR>
 noremap <space>q :q<CR>
 noremap <space>o :vs 
 
@@ -47,7 +47,6 @@ noremap <space>j <C-W>j
 noremap <space>k <C-W>k
 noremap <space>h <C-W>h
 noremap <space>l <C-W>l
-noremap <space>w <C-W>w
 
 noremap <space>z za
 
@@ -105,7 +104,7 @@ Plugin 'The-NERD-Commenter'
 Plugin 'lrvick/Conque-Shell'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -142,7 +141,9 @@ noremap <space>X :ConqueTermTab zsh<CR>
 noremap <space>c \c<space>
 
 " ----------------------------- State Bars -----------------------
-
+"
+" ----------------------------- Ctrip -----------------------
+noremap <space>s :CtrlPMixed<CR> 
 
 " ----------------------------- Extra File Config ------------------------
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.ts,*.js set noexpandtab tabstop=2 shiftwidth=2  
