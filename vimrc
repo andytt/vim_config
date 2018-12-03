@@ -67,7 +67,7 @@ noremap <space>gc :!git commit -m
 noremap <space>gg :!git add * && git commit -m
 noremap <space>gm :!git merge<CR>
 noremap <space>gp :!git push<CR>
-noremap <spave>gP :!git pull<CR>
+noremap <space>gP :!git pull<CR>
 
 
 noremap <space>jc :tabc<CR> 
