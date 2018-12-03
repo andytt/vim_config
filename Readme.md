@@ -37,6 +37,8 @@
 | < space > + u + h/j/k/l | 上下左右调整窗口大小 | 
 | < space > + s | 全局搜索，文件、图片等 |
 | < space > + f | 文件管理 |
+| < space > + v | 打开关闭显示行号 |
+| < space > + m | 打开 Ertuil VIM 帮助文档 |
 
 ## 快速跳转相关
 

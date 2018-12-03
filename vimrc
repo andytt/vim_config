@@ -1,4 +1,5 @@
-" 这里是 Ertuil VIM 配置文件 
+"
+"这里是 Ertuil VIM 配置文件 
 "
 
 
@@ -28,6 +29,7 @@ set autoindent
 set showmatch
 set ignorecase 
 set incsearch
+set hlsearch
 set foldmethod=indent
 set foldlevel=99
 
@@ -75,6 +77,19 @@ noremap <space>jn :tabp<CR>
 noremap <space>jm :tabn<CR>
 noremap <space>je :tabedit 
 
+let g:is_nu = 1
+function! Tak_number()
+	if g:is_nu == 1
+		exe "set nonu"
+		let g:is_nu = 0
+    elseif g:is_nu == 0
+		exe "set nu"
+		let g:is_nu = 1
+    endif
+endfunction
+
+noremap <space>v :call Tak_number()<CR>
+
 function! TabPos_ActivateBuffer(num)
     let s:count = a:num
     exe "tabfirst"
@@ -113,6 +128,19 @@ filetype plugin indent on
 map <space>f :NERDTreeMirror<CR>
 map <space>f :NERDTreeToggle<CR>
 
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+" Close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
 " ----------------------------- plugin taglist start ---------------------
 map <space>t :TlistToggle<CR>
 let Tlist_Use_Right_Window =1
@@ -153,4 +181,6 @@ autocmd BufNewFile,BufRead *.c *.cpp map <space>r :exec "!g++ % -o %< && ./%<"<C
 autocmd BufNewFile,BufRead *.ts *.js map <space>r :exec "!node %"<CR>
 autocmd BufNewFile,BufRead *.java map <space>r :exec "!javac % && java %<"<CR>
 
+" ----------------------------- Help Window  ------------------------
 
+noremap <space>m :split ~/.vim/Readme.md<CR>
