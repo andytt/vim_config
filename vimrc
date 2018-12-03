@@ -61,6 +61,8 @@ noremap <C-A> ^
 noremap <C-E> $
 noremap <C-K> d$
 noremap <C-U> d^
+noremap <C-V> <C-F>
+noremap <M-V> <C-B>
 
 noremap <space>ga :!git add *<CR>
 noremap <space>gc :!git commit -m
@@ -88,7 +90,7 @@ function! TabPos_Initialize()
     endfor
     exe "map <space>0 :call TabPos_ActivateBuffer(10)<CR>"
 endfunction
- 
+
 autocmd VimEnter * call TabPos_Initialize()
 
 " ----------------------------- Vundle Start ----------------------------
