@@ -1,8 +1,6 @@
 "
 "这里是 Ertuil VIM 配置文件 
 "
-
-
 " ---------------------------- Basic Config ------------------------------
 
 set nu
@@ -114,19 +112,21 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'The-NERD-tree'
 Plugin 'taglist.vim'
 Plugin 'AutoComplPop'
+Plugin 'haya14busa/incsearch.vim'
 Plugin 'Syntastic'
 Plugin 'The-NERD-Commenter'
 Plugin 'lrvick/Conque-Shell'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()
 filetype plugin indent on
 
 " ----------------------------- NERDtree ---------------------------------
 
-map <space>f :NERDTreeMirror<CR>
-map <space>f :NERDTreeToggle<CR>
+map <space>d :NERDTreeMirror<CR>
+map <space>d :NERDTreeToggle<CR>
 
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
@@ -166,13 +166,13 @@ if has('terminal') && exists(':terminal') == 2 && has('patch-8.1.1')
 	" vim 8.1 支持 termwinkey ，不需要把 terminal 切换成 normal 模式
 	" 设置 termwinkey 为 CTRL 加减号（GVIM），有些终端下是 CTRL+?
 	" 后面四个键位是搭配 termwinkey 的，如果 termwinkey 更改，也要改
-	noremap <space>x :belowright term<CR><c-/>:resize -5<CR>
+	noremap <space>x :belowright term<CR><c-_>:resize -7<CR>
 	set termwinkey=<c-_>
-	tnoremap <space>h <c-_>h
-	tnoremap <space>l <c-_>l
-	tnoremap <space>j <c-_>j
-	tnoremap <space>k <c-_>k
-	tnoremap <space>q <c-\><c-n>
+	tnoremap <c-/>h <c-_>h
+	tnoremap <c-/>l <c-_>l
+	tnoremap <c-/>j <c-_>j
+	tnoremap <c-/>k <c-_>k
+	tnoremap <c-/>q <c-_>:q!
 else
     noremap <space>x :ConqueTermSplit zsh<CR>
     noremap <space>X :ConqueTermTab zsh<CR>
@@ -185,7 +185,23 @@ noremap <space>c \c<space>
 " ----------------------------- State Bars -----------------------
 "
 " ----------------------------- Ctrip -----------------------
-noremap <space>s :CtrlPMixed<CR> 
+noremap <space>f :CtrlPMixed<CR> 
+
+" ----------------------------- incsearch -----------------------
+
+map <space>s <Plug>(incsearch-forward)
+map <space>S <Plug>(incsearch-backward)
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 
 " ----------------------------- Extra File Config ------------------------
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.ts,*.js set noexpandtab tabstop=2 shiftwidth=2  
