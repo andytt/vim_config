@@ -111,7 +111,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'The-NERD-tree'
 Plugin 'taglist.vim'
-Plugin 'AutoComplPop'
+" Plugin 'AutoComplPop'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'Syntastic'
 Plugin 'The-NERD-Commenter'
